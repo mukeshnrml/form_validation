@@ -1,0 +1,19 @@
+<h1>Form Validation</h1>
+
+<form [formGroup]="loginform">
+
+  Email: <input type="email" name="email" placeholder="your@example.com" formControlName="Email">
+  @if(Email?.invalid && (Email?.dirty || Email?.touched)){
+    @if(Email?.errors?.['required']){
+      <br><span>Email is required</span>
+    }
+  }
+
+  <br><br>
+  Password: <input type="password" name="password" placeholder="Password" formControlName="Password"><br><br>
+  @if(Password?.invalid && (Password?.dirty || Password?.touched)){
+    @if(Password?.errors?.['required']){
+      <span>Password must be 10 Char</span>
+    }
+  }
+</form>
